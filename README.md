@@ -8,9 +8,9 @@ CivicLens is a smart civic issue management platform designed to transform how u
 
 Urban civic issues such as potholes, garbage accumulation, and water leakage often remain unresolved due to:
 
-- Manual and unstructured reporting systems  
-- Lack of prioritization of critical issues  
-- Inefficient routing and delayed response  
+* Manual and unstructured reporting systems
+* Lack of prioritization of critical issues
+* Inefficient routing and delayed response
 
 These challenges lead to poor infrastructure management, slower resolution times, and reduced citizen trust.
 
@@ -20,10 +20,10 @@ These challenges lead to poor infrastructure management, slower resolution times
 
 CivicLens introduces an AI-powered system that:
 
-- Detects civic issues directly from images  
-- Automatically assigns priority based on real-world factors  
-- Routes complaints to the correct department without manual intervention  
-- Provides a real-time dashboard for monitoring and resolution  
+* Detects civic issues directly from images
+* Automatically assigns priority based on real-world factors
+* Routes complaints to the correct department without manual intervention
+* Provides a real-time dashboard for monitoring and resolution
 
 The goal is to move from **complaint collection → intelligent resolution**.
 
@@ -31,40 +31,43 @@ The goal is to move from **complaint collection → intelligent resolution**.
 
 ## 🧠 Core Features
 
-- 📸 **AI-Based Issue Detection**  
-  Uses computer vision to identify civic problems from images  
+* 📸 **AI-Based Issue Detection**
+  Uses computer vision to identify civic problems from images
 
-- ⚡ **Smart Priority Engine**  
-  Assigns urgency based on severity, location, and crowd density  
+* ⚡ **Smart Priority Engine**
+  Assigns urgency based on severity, location, and crowd density
 
-- 🔄 **Automated Routing System**  
-  Directs complaints to the appropriate department  
+* 🔄 **Automated Routing System**
+  Directs complaints to the appropriate department
 
-- 🗺️ **Live Monitoring Dashboard**  
-  Displays complaints and their status in real-time  
+* 🗺️ **Live Monitoring Dashboard**
+  Displays complaints and their status in real-time
 
-- 🔔 **Status Tracking**  
-  Keeps users informed throughout the resolution process  
+* 🔔 **Status Tracking**
+  Keeps users informed throughout the resolution process
 
-- 🧠 **Duplicate Detection**  
-  Prevents redundant complaints using location and image similarity  
+* 🧠 **Duplicate Detection**
+  Prevents redundant complaints using location and image similarity
 
 ---
 
 ## 🏗️ System Architecture
 
-The system follows a clean, layered architecture:
+```mermaid
+graph TD
+    A[User - Web/App (React)] --> B[Backend API (Node.js)]
+    B --> C[FastAPI AI Service]
+    C --> D[YOLOv8 + OpenCV Processing]
+    D --> E[MongoDB Database]
+    B --> F[Municipal Dashboard (React)]
+    F --> E
+```
 
-User (Web/App Interface - React)  
-      ↓  
-Backend API (Node.js + FastAPI)  
-      ↓  
-AI Processing Layer (YOLOv8 + OpenCV)  
-      ↓  
-Database (MongoDB)  
-      ↓  
-Municipal Dashboard (React)  
+---
 
+## 🔄 System Workflow
+
+```mermaid
 flowchart TD
     A[User Uploads Image] --> B[Backend Receives Request]
     B --> C[AI Model Processes Image]
@@ -75,22 +78,26 @@ flowchart TD
     G --> H[Authority Dashboard]
     H --> I[Issue Resolved]
     I --> J[User Gets Notification]
-    
----
-
-## 🔄 System Workflow
-
-1. A citizen captures and uploads an image of a civic issue  
-2. The system processes the request through the backend  
-3. The AI model detects and classifies the issue  
-4. A priority level is assigned using the priority engine  
-5. Duplicate detection checks for existing reports  
-6. The complaint is routed to the relevant department  
-7. Authorities manage and resolve the issue via dashboard  
-8. The user receives updates until resolution  
+```
 
 ---
 
+## 🧠 AI Processing Pipeline
+
+```mermaid
+flowchart LR
+    A[Input Image] --> B[Preprocessing (OpenCV)]
+    B --> C[YOLOv8 Detection]
+    C --> D[Object Classification]
+    D --> E[Severity Estimation]
+    E --> F[Output: Issue Type + Priority]
+```
+
+---
+
+## 📊 Data Flow Diagram
+
+```mermaid
 sequenceDiagram
     participant User
     participant Frontend
@@ -108,57 +115,63 @@ sequenceDiagram
     Authority-->>Backend: Update Status
     Backend-->>Frontend: Send Updates
     Frontend-->>User: Notify Status
+```
 
 ---
 
 ## 🧰 Technology Stack
 
 ### Frontend
-- React.js (User Interface & Dashboard)
-- Vercel (Deployment)
+
+* React.js (User Interface & Dashboard)
+* Vercel (Deployment)
 
 ### Backend
-- Node.js (API Layer)
-- Python FastAPI (AI Services)
-- Render (Deployment)
+
+* Node.js (API Layer)
+* Python FastAPI (AI Services)
+* Render (Deployment)
 
 ### AI / ML
-- YOLOv8 (Object Detection)
-- OpenCV (Image Processing)
+
+* YOLOv8 (Object Detection)
+* OpenCV (Image Processing)
 
 ### Database
-- MongoDB
+
+* MongoDB
 
 ### DevOps
-- Docker (Containerization)
+
+* Docker (Containerization)
 
 ---
 
 ## ⚙️ System Intelligence
 
-- Real-time complaint processing  
-- Location-aware prioritization  
-- AI-driven decision-making  
-- Scalable and modular architecture  
+* Real-time complaint processing
+* Location-aware prioritization
+* AI-driven decision-making
+* Scalable and modular architecture
 
 ---
 
-## 📊 Feasibility
+## 📈 Feasibility
 
-- Uses pre-trained AI models for faster development  
-- Built on lightweight, widely-used technologies  
-- Modular design enables easy scalability  
-- Suitable for rapid prototyping in hackathon environments  
+* Uses pre-trained AI models for faster development
+* Built on lightweight, widely-used technologies
+* Modular design enables easy scalability
+* Suitable for rapid prototyping in hackathon environments
 
 ---
 
 ## 📈 Impact
 
-- 🏙️ Enables smarter city management  
-- ⚡ Reduces issue resolution time  
-- 📊 Supports data-driven governance  
-- 🤝 Improves transparency and accountability  
-- ⚙️ Optimizes resource allocation  
+* 🏙️ Enables smarter city management
+* ⚡ Reduces issue resolution time
+* 📊 Supports data-driven governance
+* 🤝 Improves transparency and accountability
+* ⚙️ Optimizes resource allocation
 
 ---
 
@@ -170,19 +183,19 @@ CivicLens aligns with **UN Sustainable Development Goal 11: Sustainable Cities a
 
 ## 🔮 Future Scope
 
-- WhatsApp and voice-based complaint system  
-- Predictive analytics for urban planning  
-- Integration with smart city ecosystems  
-- Real-time alerts for high-priority issues  
+* WhatsApp and voice-based complaint system
+* Predictive analytics for urban planning
+* Integration with smart city ecosystems
+* Real-time alerts for high-priority issues
 
 ---
 
 ## 👨‍💻 Team
 
-- Your Name  
-- Team Member 2  
-- Team Member 3  
-- Team Member 4  
+* Your Name
+* Team Member 2
+* Team Member 3
+* Team Member 4
 
 ---
 
