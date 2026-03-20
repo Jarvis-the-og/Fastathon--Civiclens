@@ -71,7 +71,7 @@ flowchart LR
 
 ---
 
-## 🧠 AI Processing Pipeline (Horizontal ✅)
+## 🧠 AI Processing Pipeline
 
 ```mermaid
 flowchart LR
@@ -181,10 +181,10 @@ Aligned with **UN SDG 11: Sustainable Cities and Communities**
 
 ## 👨‍💻 Team
 
-* Your Name
-* Member 2
-* Member 3
-* Member 4
+* Rishabh Dev Pandey
+* Raghav Rege
+* Devansh Saxena
+* Swarnava Sarkar
 
 ---
 
