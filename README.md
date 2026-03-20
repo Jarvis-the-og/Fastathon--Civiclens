@@ -65,6 +65,17 @@ Database (MongoDB)
       ↓  
 Municipal Dashboard (React)  
 
+flowchart TD
+    A[User Uploads Image] --> B[Backend Receives Request]
+    B --> C[AI Model Processes Image]
+    C --> D[Issue Detection & Classification]
+    D --> E[Priority Engine Assigns Urgency]
+    E --> F[Duplicate Detection Check]
+    F --> G[Route to Department]
+    G --> H[Authority Dashboard]
+    H --> I[Issue Resolved]
+    I --> J[User Gets Notification]
+    
 ---
 
 ## 🔄 System Workflow
@@ -77,6 +88,26 @@ Municipal Dashboard (React)
 6. The complaint is routed to the relevant department  
 7. Authorities manage and resolve the issue via dashboard  
 8. The user receives updates until resolution  
+
+---
+
+sequenceDiagram
+    participant User
+    participant Frontend
+    participant Backend
+    participant AI
+    participant DB
+    participant Authority
+
+    User->>Frontend: Upload Image
+    Frontend->>Backend: Send Request
+    Backend->>AI: Process Image
+    AI-->>Backend: Detection Result
+    Backend->>DB: Store Complaint
+    Backend->>Authority: Assign Issue
+    Authority-->>Backend: Update Status
+    Backend-->>Frontend: Send Updates
+    Frontend-->>User: Notify Status
 
 ---
 
